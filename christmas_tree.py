@@ -3,8 +3,8 @@
 _author = 'Adebayo Ojo Ayowamide'
 
 ###################################################
-
-tree = [i*'x' for i in range(30)]   # list of x multiply from 0 to 29
+length = int(input('Enter length of tree > '))  
+tree = [i*'x' for i in range(length)]   # list of x multiply from length 
 add = len(tree)
 
 
@@ -12,7 +12,7 @@ def first_half():
     """ First half of Christmas tree"""
     global add
     for i in range(len(tree)):
-        half_tree = ((' ' * add) + ('*' * i))  # spaces multiply from 30 to 0 then plus 'x' multiply from 29 to 0
+        half_tree = ((' ' * add) + ('*' * i))  # spaces multiply from length then plus 'x' multiply from length 
         yield half_tree           # generate full output, if return was used you'll get only the last value
         add -= 1
 
@@ -28,14 +28,14 @@ def full_tree():
     """ Full christmas tree"""
     first, second = list(first_half()), list(second_half())   # use list to generate output
     for i in range(len(first)):
-        a = first[i]            # index first_half value from 0 to 29
-        b = second[i]           # index second_half value from 0 to 29
+        a = first[i]            # index first_half value from length 
+        b = second[i]           # index second_half value from length
         print(a+b)              # then get them married :)
 
 
 def leg():
     for i in range(3):
-        print(' ' * (len(tree[29]) - 2) + '||')  # half of last tree output multiply with spaces to put the leg exactly
+        print(' ' * (len(tree[-1]) - 1) + '| |')  # half of last tree output multiply with spaces to put the leg exactly
                                                  # in  the middle
 
 
